@@ -19,12 +19,18 @@ suite('Manifest Url Generator', function () {
 
     instance._setup(function (err) {
       assert.ifError(err);
-      console.log(instance.manifest());
+      // console.log(instance.manifest());
       assert.equal(Object.keys(instance.manifest()).length, 4, 'Should have 4 routes');
 
       for (var k in instance.manifest()) {
         validate_fq(instance.manifest()[k]);
       }
+
+      var u = instance.format('api/dogs/search', {
+        text: 'Biggie Smalls',
+        tags: 'bulldog,has_spots'
+      });
+      assert.equal(u, 'http://127.0.0.1:9005/api/v0/dogs/search/Biggie%20Smalls?tags=bulldog%2Chas_spots', 'Url generation');
       done();
     });
 
@@ -45,6 +51,18 @@ suite('Manifest Url Generator', function () {
       for (var k in instance.manifest()) {
         validate_fq(instance.manifest()[k]);
       }
+
+      var u = instance.format('api/dogs/search', {
+        text: 'Biggie Smalls',
+        tags: 'bulldog,has_spots'
+      });
+      assert.equal(u, 'http://127.0.0.1:9005/api/v0/dogs/search/Biggie%20Smalls?tags=bulldog%2Chas_spots', 'Url generation');
+
+      var u = instance.format('api/cats/search', {
+        text: 'Nermal'
+      });
+      assert.equal(decodeURIComponent(u), 'Route Not Found - api/cats/search', 'Url generation');
+
       done();
     });
 

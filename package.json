@@ -1,6 +1,6 @@
 {
   "name": "mixdown-url-generator",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Interprets a manifest url, loads routes, and generates urls from the manifest.",
   "main": "index.js",
   "scripts": {

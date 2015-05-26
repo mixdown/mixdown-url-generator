@@ -1,0 +1,30 @@
+{
+  "name": "mixdown-url-generator",
+  "version": "1.0.0",
+  "description": "Interprets a manifest url, loads routes, and generates urls from the manifest.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec -u tdd test/tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mixdown/mixdown-url-generator.git"
+  },
+  "keywords": [
+    "mixdown",
+    "url",
+    "router",
+    "manifest",
+    "api"
+  ],
+  "author": "Tommy Messbauer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mixdown/mixdown-url-generator/issues"
+  },
+  "homepage": "https://github.com/mixdown/mixdown-url-generator#readme",
+  "dependencies": {
+    "mixdown-router": "^4.1.5",
+    "xhr-browserify": "0.0.4"
+  }
+}
